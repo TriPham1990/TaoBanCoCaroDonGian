@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>[Thực hành] Tạo bàn cờ caro đơn giản</title>
+</head>
+<body>
+<h2>Caro Game Simple</h2>
+<p id="display"></p>
+<button id="changevalue" onclick="change()">Change Value</button>
+
+<script>
+    let n = parseInt(prompt());
+    let board = [];
+    let data = "";
+
+    for (let i = 0; i < n; i++) {
+        board[i] = new Array(n);
+        data += '<br>';
+        for (let j = 0; j < n; j++) {
+            board[i][j] = 0;
+            data += board[i][j] + "&nbsp;&nbsp;&nbsp"
+        }
+    }
+    document.getElementById("display").innerHTML = data;
+
+    function change() {
+        let positionX = prompt('x:');
+        let positionY = prompt('y:');
+        board[positionX][positionY] = "x";
+        data = "";
+        for (let i = 0; i < n; i++) {
+            data += "<br>";
+            for (let j = 0; j < n; j++) {
+                data += board[i][j] + "&nbsp;&nbsp;";
+            }
+        }
+        document.getElementById("display").innerHTML = data;
+    }
+</script>
+</body>
+</html>
